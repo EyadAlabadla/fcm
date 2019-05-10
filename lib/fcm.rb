@@ -241,6 +241,7 @@ class FCM
   def execute_notification(body)
     for_uri(BASE_URI) do |connection|
       response = connection.post('/fcm/send', body.to_json)
+      puts response.to_s
       build_response(response)
     end
   end
